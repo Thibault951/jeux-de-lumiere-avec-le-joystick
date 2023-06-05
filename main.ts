@@ -20,11 +20,11 @@ function intensiter_2_en_fonction_du_joystick2 () {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(100)
         strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 550 && BitMaker.read_Ain(AnalogPort.P0) > 620) {
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 550 && BitMaker.read_Ain(AnalogPort.P0) <= 620) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(60)
         strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 620 && BitMaker.read_Ain(AnalogPort.P0) > 700) {
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 620 && BitMaker.read_Ain(AnalogPort.P0) <= 700) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(30)
         strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
