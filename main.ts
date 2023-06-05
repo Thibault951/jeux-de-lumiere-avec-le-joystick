@@ -54,4 +54,9 @@ basic.forever(function () {
         strip.setBrightness(0)
         strip.show()
     }
+    if (BitMaker.read_Ain(AnalogPort.P1) > 245 && BitMaker.read_Ain(AnalogPort.P1) < 500) {
+    	
+    } else {
+    	
+    }
 })
