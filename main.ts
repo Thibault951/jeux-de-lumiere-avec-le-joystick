@@ -1,45 +1,42 @@
+let strip: neopixel.Strip = null
 function intensiter_en_fonction_du_joystick () {
-    if (BitMaker.read_Ain(AnalogPort.P0) > 225 && BitMaker.read_Ain(AnalogPort.P0) <= 300) {
+    if (BitMaker.read_Ain(AnalogPort.P0) > 240 && BitMaker.read_Ain(AnalogPort.P0) <= 320) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(100)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 300 && BitMaker.read_Ain(AnalogPort.P0) <= 360) {
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 320 && BitMaker.read_Ain(AnalogPort.P0) <= 400) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(60)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 360 && BitMaker.read_Ain(AnalogPort.P0) <= 450) {
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 400 && BitMaker.read_Ain(AnalogPort.P0) <= 490) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(30)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     } else {
         strip.setBrightness(0)
     }
 }
 function intensiter_2_en_fonction_du_joystick2 () {
-    if (BitMaker.read_Ain(AnalogPort.P0) > 510 && BitMaker.read_Ain(AnalogPort.P0) <= 550) {
-        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-        strip.setBrightness(100)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 550 && BitMaker.read_Ain(AnalogPort.P0) <= 620) {
-        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-        strip.setBrightness(60)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-    } else if (BitMaker.read_Ain(AnalogPort.P0) > 620 && BitMaker.read_Ain(AnalogPort.P0) <= 700) {
+    if (BitMaker.read_Ain(AnalogPort.P0) > 515 && BitMaker.read_Ain(AnalogPort.P0) <= 600) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
         strip.setBrightness(30)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 600 && BitMaker.read_Ain(AnalogPort.P0) <= 690) {
+        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
+        strip.setBrightness(60)
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+    } else if (BitMaker.read_Ain(AnalogPort.P0) > 690 && BitMaker.read_Ain(AnalogPort.P0) <= 780) {
+        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
+        strip.setBrightness(100)
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
     } else {
         strip.setBrightness(0)
     }
 }
-let strip: neopixel.Strip = null
-strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-strip.show()
 basic.forever(function () {
-    if (BitMaker.read_Ain(AnalogPort.P0) > 225 && BitMaker.read_Ain(AnalogPort.P0) < 450) {
+    if (BitMaker.read_Ain(AnalogPort.P0) > 240 && BitMaker.read_Ain(AnalogPort.P0) < 490) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
         intensiter_en_fonction_du_joystick()
         strip.show()
     } else {
@@ -47,9 +44,9 @@ basic.forever(function () {
         strip.setBrightness(0)
         strip.show()
     }
-    if (BitMaker.read_Ain(AnalogPort.P0) > 460 && BitMaker.read_Ain(AnalogPort.P0) < 700) {
+    if (BitMaker.read_Ain(AnalogPort.P0) > 515 && BitMaker.read_Ain(AnalogPort.P0) < 780) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
         intensiter_2_en_fonction_du_joystick2()
         strip.show()
     } else {
