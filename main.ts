@@ -56,7 +56,16 @@ basic.forever(function () {
     }
     if (BitMaker.read_Ain(AnalogPort.P1) > 245 && BitMaker.read_Ain(AnalogPort.P1) < 500) {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
-        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Blue))
+        strip.show()
+    } else {
+        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
+        strip.setBrightness(0)
+        strip.show()
+    }
+    if (BitMaker.read_Ain(AnalogPort.P1) > 515 && BitMaker.read_Ain(AnalogPort.P1) < 780) {
+        strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
+        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
         strip.show()
     } else {
         strip = neopixel.create(DigitalPin.P13, 4, NeoPixelMode.RGB)
